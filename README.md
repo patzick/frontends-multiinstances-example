@@ -5,7 +5,7 @@ This setup is recommended for large projects with multiple teams working on diff
 
 Starter example contains 2 example shop applications, using different Frontends [templates](https://frontends.shopware.com/getting-started/templates.html) to show that you can create applications with completly different stack, and still reuse the parts which can be reused.
 
-## Wuick start
+## Quick start
 
 Run the following command:
 
