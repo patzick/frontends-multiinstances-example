@@ -1,28 +1,42 @@
-# Turborepo starter
+# Turborepo starter example for Composable Frontends
 
-This is an official starter Turborepo.
+Example how to create multiple shop applications and share components between them.
+This setup is recommended for large projects with multiple teams working on different parts of the application or agencies, which builds their own system for client deployments and want to share logic and components between them.
 
-## Using this example
+Starter example contains 2 example shop applications, using different Frontends [templates](https://frontends.shopware.com/getting-started/templates.html) to show that you can create applications with completly different stack, and still reuse the parts which can be reused.
+
+## Wuick start
 
 Run the following command:
 
 ```sh
-npx create-turbo@latest
+pnpm install
+```
+
+to install dependencies and then to run specific application run command with its name:
+
+```sh
+pnpm run dev --filter=my-shop.com
 ```
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This example includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+Apps are meant to be deployable applications, You can use Vite, Nuxt, Next.js, or any other framework to build your application.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Packages are meant to be as a reusable parts:
+
+- shared UI components
+- shared composables
+- shared logic and utils
+- shared Nuxt layers
+- shared CMS components
+
+...and so on. It is recommended first to develop the application and abstract the parts which can be reused into packages, unless you already have the experience with monorepos and you know what you are doing.
+Putting your code as a package is not a requirement, but it is recommended to keep your code clean and reusable. And also putting everything into the packages could also be overused if the packages are not reusable and tailored for specific application.
 
 ### Utilities
 
@@ -32,44 +46,37 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+As packages you can also share configuration files between packages and applications, it is a very powerful tool.
+
 ### Build
 
 To build all apps and packages, run the following command:
 
-```
-cd my-turborepo
+```sh
 pnpm build
 ```
+
+To build specific app or package, run the following command (with changed name):
+
+```sh
+pnpm build --filter=my-shop.com
+```
+
+This is how you also should configure deployment - to build only what's specific application needs.
 
 ### Develop
 
 To develop all apps and packages, run the following command:
 
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```sh
+pnpm dev --filter=my-shop.com
 ```
 
 ## Useful Links
+
+Shopware Frontends documentation:
+
+- [Getting started](https://frontends.shopware.com/getting-started/index.html)
 
 Learn more about the power of Turborepo:
 

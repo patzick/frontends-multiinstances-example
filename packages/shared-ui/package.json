@@ -1,0 +1,21 @@
+{
+  "name": "shared-ui",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "files": [
+    "components",
+    "nuxt.config.ts"
+  ],
+  "devDependencies": {
+    "@nuxt/kit": "^3.7.3",
+    "eslint-config-custom": "workspace:*",
+    "nuxt": "^3.7.3",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  }
+}
