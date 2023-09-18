@@ -13,12 +13,12 @@
     "analyze": "nuxt analyze"
   },
   "dependencies": {
-    "@shopware-pwa/api-client": "canary",
-    "@shopware-pwa/cms-base": "canary",
-    "@shopware-pwa/composables-next": "canary",
-    "@shopware-pwa/helpers-next": "canary",
-    "@shopware-pwa/nuxt3-module": "canary",
-    "@shopware-pwa/types": "canary",
+    "@shopware-pwa/api-client": "^0.6.0",
+    "@shopware-pwa/cms-base": "^0.8.5",
+    "@shopware-pwa/composables-next": "^0.13.3",
+    "@shopware-pwa/helpers-next": "^0.4.0",
+    "@shopware-pwa/nuxt3-module": "^0.5.4",
+    "@shopware-pwa/types": "^0.5.6",
     "@unocss/nuxt": "^0.55.7",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
